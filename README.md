@@ -17,7 +17,7 @@ scripts for backing up, archiving, and releasing [tetris](https://tomhummel.com/
     ls -lh dist/
     > dist/2016-03-26.sql
 
-### archiving
+### archive
 
     make tar
     make zip
@@ -26,3 +26,5 @@ scripts for backing up, archiving, and releasing [tetris](https://tomhummel.com/
     > 2016-03-26.sql 2016-03-26.sql.tar.gz 2016-03-26.sql.zip
 
 ### release
+
+    currently manual via github web
