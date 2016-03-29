@@ -28,3 +28,26 @@ scripts for backing up, archiving, and releasing [tetris](https://tomhummel.com/
 ### release
 
     currently manual via github web
+
+### database diff'ing
+
+
+    # install mysql utils
+    sudo apt-get install mysql-utilities
+
+    # create and load two databases
+
+    mysql -uroot -proot
+
+    mysql> create database `t2007_03_24`;
+    mysql> use t2007_03_24;
+    mysql> source /tetris-data/dist/2007-03-24.sql;
+
+    mysql> create database `t2016_03_26`;
+    mysql> use t2016_03_26;
+    source /tetris-data/dist/2016-03-26.sql;
+
+    mysql> exit
+
+    # compare
+    mysqldbcompare --server1=root:root@localhost --server2=root:root@localhost t2007_03_24:t2007_03_26 -vv --run-all-tests
