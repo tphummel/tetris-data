@@ -16,10 +16,10 @@ dist/%.sql:
 			$(MYSQL_DB)
 
 dist/%.sql.zip: sql
-		zip -j -r $@ $(@D)/$(today).sql
+		zip -j -r $@ $(@D)/$*.sql
 
 dist/%.sql.tar.gz: sql
-		tar czf $@ -C $(@D) $(today).sql
+		tar czf $@ -C $(@D) $*.sql
 
 sql: dist/$(today).sql
 zip: dist/$(today).sql.zip
