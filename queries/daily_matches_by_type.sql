@@ -1,7 +1,7 @@
-select matchdate, 
-SUM(IF(a.type = 2, a.ct, 0))   AS ct2,
-SUM(IF(a.type = 3, a.ct, 0))   AS ct3,
-SUM(IF(a.type = 4, a.ct, 0))   AS ct4 from (
+select matchdate as `date`,
+SUM(IF(a.type = 2, a.ct, 0))   AS `2p`,
+SUM(IF(a.type = 3, a.ct, 0))   AS `3p`,
+SUM(IF(a.type = 4, a.ct, 0))   AS `4p` from (
 SELECT t.matchdate,
                (SELECT COUNT(playerid)
                 FROM   playermatch
