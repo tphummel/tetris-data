@@ -8,7 +8,6 @@ SELECT t.matchdate,
                 WHERE  matchid = t.matchid) AS type,
                COUNT(t.matchid)             AS ct
         FROM   tntmatch t
-        WHERE t.matchdate <= '2004-05-21'
         GROUP  BY (SELECT COUNT(playerid)
                    FROM   playermatch
                    WHERE  matchid = t.matchid) ) a
