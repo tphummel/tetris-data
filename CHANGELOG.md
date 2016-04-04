@@ -1,3 +1,85 @@
+# 3.0.0 / 2007-03-27
+
+> march 27, 2007(a) - includes 3p data from mar27 evening.  had a problem with writing 4p matches so switched to excel.  Dumped before debugging. #11584
+
+created the `location` table.
+
+```
+# WARNING: Objects in server1.t2007_03_27a but not in server1.t2007_03_27:
+#        TABLE: location
+#
+#                                                   Defn    Row     Data   
+# Type      Object Name                             Diff    Count   Check  
+# -------------------------------------------------------------------------
+# TABLE     player                                  pass    pass    pass    
+# TABLE     playermatch                             pass    FAIL    FAIL
+# TABLE     tntmatch                                FAIL    FAIL    FAIL    
+
+--- `t2007_03_27a`.`tntmatch`
++++ `t2007_03_27`.`tntmatch`
+@@ -6,4 +6,4 @@
+   `location` int(15) DEFAULT NULL,
+   `note` varchar(255) DEFAULT NULL,
+   PRIMARY KEY (`matchid`)
+-) ENGINE=InnoDB AUTO_INCREMENT=11585 DEFAULT CHARSET=latin1
++) ENGINE=InnoDB AUTO_INCREMENT=11569 DEFAULT CHARSET=latin1
+```
+
+### match count by type
+```
++------+------+------+
+| 2p   | 3p   | 4p   |
++------+------+------+
+|  632 |  784 |  143 |
++------+------+------+
+```
+
+### daily match count by type
+
+```
++------------+------+------+------+
+| date       | 2p   | 3p   | 4p   |
++------------+------+------+------+
+| 2004-04-15 |   11 |   13 |    2 |
+| 2004-04-16 |    8 |   18 |   12 |
+| 2004-04-17 |    0 |   32 |   13 |
+| 2004-04-18 |    0 |   19 |    0 |
+| 2004-04-19 |   10 |   15 |    0 |
+| 2004-04-20 |   37 |   12 |    0 |
+| 2004-04-21 |   30 |    0 |    0 |
+| 2004-04-22 |   15 |    0 |    0 |
+| 2004-04-23 |   23 |   25 |    4 |
+| 2004-04-24 |   22 |   27 |    0 |
+| 2004-04-26 |    2 |   21 |    0 |
+| 2004-04-27 |   24 |   17 |    0 |
+| 2004-05-02 |   34 |    0 |    0 |
+| 2004-05-04 |    5 |   20 |    0 |
+| 2004-05-08 |    0 |   29 |    0 |
+| 2004-05-09 |   23 |   12 |   34 |
+| 2004-05-10 |    0 |    0 |    5 |
+| 2004-05-11 |   42 |   48 |   12 |
+| 2004-05-12 |   55 |   38 |    8 |
+| 2004-05-13 |   58 |    2 |   17 |
+| 2004-05-16 |    0 |    0 |   23 |
+| 2004-05-17 |    0 |   15 |    0 |
+| 2004-05-18 |   19 |   44 |    5 |
+| 2004-05-19 |   14 |   31 |    0 |
+| 2004-05-20 |    0 |   37 |    8 |
+| 2004-05-21 |   32 |    0 |    0 |
+| 2007-02-28 |    2 |   14 |    0 |
+| 2007-03-07 |    0 |   34 |    0 |
+| 2007-03-09 |    0 |   27 |    0 |
+| 2007-03-10 |    0 |   50 |    0 |
+| 2007-03-12 |   25 |   20 |    0 |
+| 2007-03-14 |   21 |   21 |    0 |
+| 2007-03-19 |   54 |   39 |    0 |
+| 2007-03-21 |    0 |   55 |    0 |
+| 2007-03-25 |   50 |    0 |    0 |
+| 2007-03-26 |   16 |   34 |    0 |
+| 2007-03-27 |    0 |   15 |    0 |
++------------+------+------+------+
+```
+
 # 2.0.2 / 2007-03-27
 
 > march 27, 2007 - includes mar26 + 25 dan v tom.  + 25 3p dan, jd, tom.  Two tie matches that now have the first notes in system.
