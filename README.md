@@ -29,8 +29,13 @@ scripts for backing up, archiving, and releasing [tetris](https://tomhummel.com/
 
     currently manual via github web
 
-### database diff'ing
+### semver
 
+- **major**: schema changes
+- **minor**: changes/updates/repairs to existing data
+- **patch**: added new data
+
+### database diff'ing
 
     # install mysql utils
     sudo apt-get install mysql-utilities
