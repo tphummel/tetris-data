@@ -1,6 +1,6 @@
 # tetris data
 
-scripts for backing up, archiving, and releasing [tetris](https://tomhummel.com/2011/01/01/tetris-primer/) data
+Tools for backing up, archiving, and releasing [tetris](https://tomhummel.com/2011/01/01/tetris-primer/) data
 
 ### backup
 
